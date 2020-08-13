@@ -3,6 +3,7 @@ package main
 import (
 	"flag"
 	"fmt"
+	"math"
 	"sync"
 )
 
@@ -33,8 +34,10 @@ func testNumbersParallel(nMax int, threads int) {
 	// Start threads
 	for x := 2; x < 2+threads+1; x++ {
 		wg.Add(1)
-		// fmt.Println("Start new Go routine")
+
+		// Start new Go routine
 		go isPrimeAsync(x, c, wg)
+
 		nCurrent++
 	}
 
@@ -60,7 +63,7 @@ func testNumbersParallel(nMax int, threads int) {
 
 func isPrimeAsync(i int, c chan Result, wg *sync.WaitGroup) {
 	// Primitive algorithm for calculating prime numbers
-	for j := 2; j < i; j++ {
+	for j := 2; j < int(math.Sqrt(float64(i)))+1; j++ {
 		if i%j == 0 { // not a prime
 			// Post result to the channel
 			c <- Result{i, false}
