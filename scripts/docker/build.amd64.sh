@@ -1,0 +1,1 @@
+docker build -f amd64.dockerfile -t twci/rip .

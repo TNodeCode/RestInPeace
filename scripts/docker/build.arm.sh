@@ -1,0 +1,1 @@
+docker build -f arm.dockerfile -t twci/rip:arm .
