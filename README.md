@@ -5,7 +5,7 @@
 #### Howto
 
 ```bash
-# Calculating all prime numbers up to 1 Million with 4 parallel goroutines
+# Calculating all prime numbers up to 1 Million with 8 parallel goroutines
 
 $ time ./rip -t 8 -n 1000000
 
@@ -14,11 +14,17 @@ Maximum Number:  1000000
 ---
  78498 prime numbers found
 
-real    0m1,516s
-user    0m0,000s
-sys     0m0,046s
+real    1m22,570s
+user    0m0,031s
+sys     0m0,031s
 ```
 
 #### Executables
 
 You find the executable files in the /dist folder
+
+|         | AMD64 | 386 | ARM64 | ARM |
+| ------- | ----- | --- | ----- | --- |
+| Windows | x     | x   |       |     |
+| Linux   | x     | x   | x     | x   |
+| MacOS   | x     | x   | x     | x   |

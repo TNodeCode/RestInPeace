@@ -1,3 +1,3 @@
 FROM scratch
-COPY dist/arm/rip ./
+COPY dist/linux/arm/rip ./
 CMD [ "./rip" ]

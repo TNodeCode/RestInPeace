@@ -1,0 +1,1 @@
+docker build -f i386.dockerfile -t twci/rip .
